@@ -2,16 +2,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: example-ingress
-  annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    kubernetes.io/ingress.class: "nginx"
 spec:
-  tls:
-  - hosts:
-      - <your-host>
-    secretName: tls-secret
   rules:
-  - host: "<your-host>"
+  - host: "example.devops.com"
     http:
       paths:
       - pathType: Prefix
@@ -21,7 +14,7 @@ spec:
             name: sample-1
             port:
               number: 3000
-  - host: "<your-host>"
+  - host: "example.devops.com"
     http:
       paths:
       - pathType: Prefix
@@ -31,7 +24,7 @@ spec:
             name: sample-2
             port:
               number: 3000
-  - host: "<your-host>"
+  - host: "sample-1.devops.com"
     http:
       paths:
       - pathType: Prefix
@@ -41,7 +34,7 @@ spec:
             name: sample-3
             port:
               number: 3000
-  - host: "<your-host>"
+  - host: "sample-2.devops.com"
     http:
       paths:
       - pathType: Prefix
