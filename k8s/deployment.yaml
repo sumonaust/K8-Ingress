@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: <dockerhub-username>/hello-world:v1
+        image: sumonaust/host-sample-1:latest
         ports:
         - containerPort: 80
