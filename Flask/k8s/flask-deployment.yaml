@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: flask-deployment
   labels:
-    app: hello-world
+    app: flask-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-world
+      app: flask-deployment
   template:
     metadata:
       labels:
-        app: hello-world
+        app: flask-deployment
     spec:
       containers:
-      - name: hello-world
-        image: sumonaust/host-sample-1:latest
+      - name: flask-deployment
+        image: sumonaust/python-app:latest
         ports:
         - containerPort: 80
